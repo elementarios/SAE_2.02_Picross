@@ -1,5 +1,5 @@
 Vide = "VIDE"
-Noir = "NOIR" #les different etat du picross
+Noir = 1 #les different etat du picross
 Croix = "Croix"
 
 taille=0
@@ -34,6 +34,28 @@ def verification(ligne,indice):
         ligne (tableau): correspond a une ligne/colonne
         indice (tableau): correspond au regle 
     """
-    motif=0
+    
+    
+
+def conversion(ligne):
+    """transforme une ligne en indice
+
+    Args:
+        ligne (tableau): une ligne (ou colonne) d'un picross
+    """
+    global Noir
+    newIndice=[]
     cpt=0
+    for i in range(len(ligne)):
+        if(ligne[i]==Noir):
+            cpt+=1
+        else:
+            if(cpt!=0):
+                newIndice.append(cpt)
+                cpt=0
+    if (cpt!=0):
+        newIndice.append(cpt)
+    return newIndice
+
+print(conversion([0,1,1,0,1]))
 
