@@ -27,3 +27,13 @@ def affichage():
 init()
 affichage()
 
+def verification(ligne,indice):
+    """retourne True si la ligne respecte les consigne donnes par les indices
+
+    Args:
+        ligne (tableau): correspond a une ligne/colonne
+        indice (tableau): correspond au regle 
+    """
+    motif=0
+    cpt=0
+
