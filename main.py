@@ -59,5 +59,18 @@ def conversion(ligne):
         newIndice.append(cpt)
     return newIndice
 
+def colonne(ind):
+    """transforme une colonne en ligne
+
+    Args:
+        ind (int): l'indice de la colonne
+    """
+    global taille
+    global plateau
+    ligne=[]
+    for i in range(taille):
+        ligne.append(plateau[i][ind])
+    return ligne
+
 print(verification([0,1,1,0,1],[2,1]))
 
