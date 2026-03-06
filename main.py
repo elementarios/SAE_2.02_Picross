@@ -1,4 +1,4 @@
-Vide = "VIDE"
+Vide = 0
 Noir = 1 #les different etat du picross
 Croix = "Croix"
 
@@ -34,6 +34,8 @@ def verification(ligne,indice):
         ligne (tableau): correspond a une ligne/colonne
         indice (tableau): correspond au regle 
     """
+    newIndice = conversion(ligne)
+    return newIndice==indice
     
     
 
@@ -57,5 +59,5 @@ def conversion(ligne):
         newIndice.append(cpt)
     return newIndice
 
-print(conversion([0,1,1,0,1]))
+print(verification([0,1,1,0,1],[2,1]))
 
