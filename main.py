@@ -1,3 +1,5 @@
+from itertools import product
+
 Vide = 0
 Noir = 1 #les different etat du picross
 Croix = "Croix"
@@ -11,6 +13,8 @@ def init():
     global Vide
     taille = int(input("la taille du plateau:"))
     plateau=[[Vide for i in range(taille)]for j in range(taille)]
+
+   
 
 def affichage():
     """affiche le plateau de maniere "classe"
@@ -74,3 +78,17 @@ def colonne(ind):
 
 print(verification([0,1,1,0,1],[2,1]))
 
+def possibilité(ind):
+    """liste toute les possibilité possible selon la contrainte
+    """
+    global Noir
+    global Vide
+    global taille
+    toutePossibilité=list(product([Vide,Noir],repeat=taille))
+    possibilitéValide=[]
+    for i in range(len(toutePossibilité)):
+        if verification(toutePossibilité[i],ind):
+            possibilitéValide.append(toutePossibilité[i])
+    return possibilitéValide
+
+print(possibilité([2,1]))
