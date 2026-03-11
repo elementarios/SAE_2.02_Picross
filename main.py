@@ -92,3 +92,15 @@ def possibilité(ind):
     return possibilitéValide
 
 print(possibilité([2,1]))
+
+def estToujourValideColonne(ind,indice):
+    """verifie qu'une colonne est toujours valide
+
+    Args:
+        ind (tab): les conditions pour le tableau
+        indice(int): l'indice de la colonne
+    """
+    estValide = True
+    cible = conversion(colonne(indice))
+    if estValide and len(cible) > len(ind): #si il y a plus de "groupe" que necessaire
+        estValide = False
